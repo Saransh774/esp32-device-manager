@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-S3 IoT Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IoT Dashboard</h1>
+            <div id="c3-status" class="status-badge offline">C3: Offline</div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Sensor Card -->
+            <div class="card sensor-card">
+                <h3>Distance Sensor</h3>
+                <div class="large-value"><span id="distance">0</span> <small>cm</small></div>
+                <canvas id="distance-chart" width="300" height="100"></canvas>
+            </div>
+
+            <!-- Relay Card -->
+            <div class="card relay-card">
+                <h3>Relay Control</h3>
+                <div class="relay-toggle-container">
+                    <button id="relay-btn" class="btn btn-off">OFF</button>
+                    <label class="switch-label">
+                        <input type="checkbox" id="auto-mode-cb"> Auto Mode
+                    </label>
+                </div>
+                <div class="threshold-container">
+                    <label>Threshold: <span id="threshold-val">20</span> cm</label>
+                    <input type="range" id="threshold-slider" min="5" max="200" value="20">
+                </div>
+            </div>
+
+            <!-- Connection Card -->
+            <div class="card status-card">
+                <h3>C3 Connection</h3>
+                <p>RSSI: <span id="rssi">N/A</span> dBm</p>
+                <p>Last Seen: <span id="last-seen">N/A</span></p>
+            </div>
+
+            <!-- OTA Card -->
+            <div class="card ota-card">
+                <h3>Firmware Update (C3)</h3>
+                <button id="update-btn" class="btn btn-primary">Flash Latest from GitHub</button>
+                <div class="progress-container" id="progress-container" style="display:none;">
+                    <div class="progress-bar" id="progress-bar">0%</div>
+                </div>
+                <p id="ota-status" class="ota-status-msg">Ready</p>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
