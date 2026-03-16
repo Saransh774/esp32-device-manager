@@ -6,11 +6,11 @@
 #include <ArduinoJson.h>
 #include <LittleFS.h>
 
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
+const char* ssid = "Bobruz_wh_4G";
+const char* password = "Botbruz3000";
 
 // REPLACE with the MAC Address of your ESP32-C3
-uint8_t c3Address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+uint8_t c3Address[] = {0x7C, 0x9E, 0xBD, 0xED, 0x9A, 0x20};
 
 // GitHub repo details
 const char* firmware_url = "https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/firmware.bin";

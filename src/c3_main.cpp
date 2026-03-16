@@ -12,7 +12,7 @@
 // ----------------------------
 
 // REPLACE with the MAC Address of your ESP32-S3
-uint8_t s3Address[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+uint8_t s3Address[] = {0x7C, 0x9E, 0xBD, 0xED, 0x9A, 0x21};
 
 // Pins for XIAO ESP32-C3
 #define TRIGGER_PIN  4  // D2
